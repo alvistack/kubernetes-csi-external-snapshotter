@@ -22,8 +22,8 @@ spec:
       serviceAccountName: snapshot-controller
       containers:
         - name: snapshot-controller
-          image: {{ .Values.snapshotController.image.repository }}:{{ .Values.snapshotController.image.tag }}
+          image: {{ .Values.snapshotController.snapshotController.image.repository }}:{{ .Values.snapshotController.snapshotController.image.tag }}
           args:
             - --v=5
             - --leader-election=true
-          imagePullPolicy: {{ .Values.snapshotController.image.pullPolicy }}
+          imagePullPolicy: {{ .Values.snapshotController.snapshotController.image.pullPolicy }}

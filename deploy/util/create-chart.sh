@@ -21,13 +21,13 @@ BASE_DIR="$( cd "$( dirname "$0" )" && pwd )/../../"
 TEMP_DIR="$( mktemp -d )"
 trap 'rm -rf ${TEMP_DIR}' EXIT
 
-SNAPSHOT_CONTROLLER_YAML=${BASE_DIR}/chart/snapshot-controller/templates/setup-snapshot-controller.yaml
+SNAPSHOT_CONTROLLER_YAML=${BASE_DIR}/charts/snapshot-controller/templates/setup-snapshot-controller.yaml
 
-cp -rfp ${BASE_DIR}/client/config/crd/* ${BASE_DIR}/chart/snapshot-controller/templates/
-cp -rfp ${BASE_DIR}/deploy/kubernetes/snapshot-controller/* ${BASE_DIR}/chart/snapshot-controller/templates/
-rm -rf ${BASE_DIR}/chart/snapshot-controller/templates/kustomization.yaml
+cp -rfp ${BASE_DIR}/client/config/crd/* ${BASE_DIR}/charts/snapshot-controller/templates/
+cp -rfp ${BASE_DIR}/deploy/kubernetes/snapshot-controller/* ${BASE_DIR}/charts/snapshot-controller/templates/
+rm -rf ${BASE_DIR}/charts/snapshot-controller/templates/kustomization.yaml
 
-find ${BASE_DIR}/chart/snapshot-controller/templates/*.yaml | while read -r _YAML
+find ${BASE_DIR}/charts/snapshot-controller/templates/*.yaml | while read -r _YAML
 do
     yq -P -I 2 '... comments=""' -i ${_YAML}
     sed -i 's/namespace: kube-system/namespace: {{ .Release.Namespace }}/g' ${_YAML}

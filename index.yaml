@@ -2,6 +2,17 @@ apiVersion: v1
 entries:
   csi-snapshotter:
   - apiVersion: v2
+    appVersion: v8.5.0
+    created: "2026-03-04T12:58:43.96583618Z"
+    description: A Helm chart for deploy the CSI snapshotter together with the hostpath
+      CSI driver
+    digest: d1711eee030cf3a103faa367c2ee99ff04c0c27dc2814af42a4aeb164ed52935
+    name: csi-snapshotter
+    type: application
+    urls:
+    - https://github.com/alvistack/kubernetes-csi-external-snapshotter/releases/download/csi-snapshotter-v8.5.0/csi-snapshotter-v8.5.0.tgz
+    version: v8.5.0
+  - apiVersion: v2
     appVersion: v8.4.0
     created: "2025-12-05T13:10:54.092013886Z"
     description: A Helm chart for deploy the CSI snapshotter together with the hostpath
@@ -36,6 +47,16 @@ entries:
     version: v8.2.0
   snapshot-controller:
   - apiVersion: v2
+    appVersion: v8.5.0
+    created: "2026-03-04T12:58:44.141779321Z"
+    description: A Helm chart for deploy the snapshot controller
+    digest: 81cfd7f25b33d61bd33a46ad4126f8b7b5ae6b9ea82f4a502eac5c9ab5c7684d
+    name: snapshot-controller
+    type: application
+    urls:
+    - https://github.com/alvistack/kubernetes-csi-external-snapshotter/releases/download/snapshot-controller-v8.5.0/snapshot-controller-v8.5.0.tgz
+    version: v8.5.0
+  - apiVersion: v2
     appVersion: v8.4.0
     created: "2025-12-05T13:10:54.315164368Z"
     description: A Helm chart for deploy the snapshot controller
@@ -65,4 +86,4 @@ entries:
     urls:
     - https://github.com/alvistack/kubernetes-csi-external-snapshotter/releases/download/snapshot-controller-v8.2.0/snapshot-controller-v8.2.0.tgz
     version: v8.2.0
-generated: "2025-12-05T13:10:54.31520825Z"
+generated: "2026-03-04T12:58:44.141808015Z"
